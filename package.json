@@ -1,0 +1,37 @@
+{
+  "name": "githooks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "./node_modules/.bin/eslint ./js/** --ext .js --ext .jsx --ignore-path .gitignore --cache",
+    "eslint:fix": "./node_modules/.bin/eslint ./js/** --ext .js --ext .jsx --ignore-path .gitignore --fix",
+    "stylelint": "stylelint ./css/**/*.css"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run eslint --silent && npm run stylelint --silent"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benlane/githooks.git"
+  },
+  "author": "Ben Lane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benlane/githooks/issues"
+  },
+  "homepage": "https://github.com/benlane/githooks#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-compat": "^3.1.1",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "husky": "^2.3.0",
+    "stylelint": "^10.0.1"
+  }
+}
